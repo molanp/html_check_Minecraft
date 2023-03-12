@@ -1298,6 +1298,7 @@ def api():
                 </div>
             </div>
         <div class="table-container">
+        <center>
             <table id="ppm">
                 <thead>
                     <tr>
@@ -1320,6 +1321,7 @@ def api():
                     </tr>
                 </tbody>
             </table>
+            </center>
         </div>
         <button onclick="register()" class="login-button mdui-btn mdui-btn-raised mdui-ripple" id="login-btn">查询</button>
         <p id="copyright">&copy;Copyright 2023 蓝天云&trade;</p><br>
@@ -1355,7 +1357,7 @@ def api():
           var result = JSON.parse(xhr.responseText);
           if (result.status == 200) {
             regSuccess(result);
-          } else if (xhr.status == 200 || result.status != 200) {
+          } else if (xhr.status == 200 && result.status != 200) {
             regFail(result.msg);
           } else if (xhr.status == 429) {
             regFail("请求次数过多，请稍后重试");
