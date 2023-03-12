@@ -1324,7 +1324,7 @@ def api():
             </center>
         </div>
         <button onclick="register()" class="login-button mdui-btn mdui-btn-raised mdui-ripple" id="login-btn">查询</button>
-        <p id="copyright">&copy;Copyright 2023 蓝天云&trade;</p><br>
+        <p id="copyright">&copy;Copyright 2023 蓝天云&trade;Power by <a href="https://github.com/molanp/html_check_Minecraft">molanp</a></p><br>
     </div>
     </center>
     <script>
