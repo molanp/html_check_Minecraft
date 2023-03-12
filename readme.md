@@ -2,8 +2,9 @@
 
 # 示例地址demo
 
-http://stats.lantianclouds.com:48012/
+[http://stats.lantianclouds.com:48058/](http://stats.lantianclouds.com:48012/)
 
+![图片](https://www.minebbs.com/attachments/1678589112045-png.43963/)
 # run
 ```
 python index.py
