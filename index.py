@@ -1157,6 +1157,11 @@ def check():
           "status": 400,
           "msg": "请求格式有误"
         }
+  except ValueError:
+        return {
+        "status": 400,
+        "msg": "端口必须是数字"
+        }
         
 @limiter.request_filter
 def ip_whitelist():
@@ -1200,23 +1205,20 @@ def api():
         }
 
         #login-box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: solid 1px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-            padding: 10px 10px 10px 10px;
-            min-width: 100px;
-            background-color: #ffffff80;
+            background-color: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+            -webkit-box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+            border-radius: 12px;
+            -webkit-border-radius: 12px;
+            color: rgba(255, 255, 255, 0.75);
             text-align: center;
-            line-height: 40px;
-            backdrop-filter: blur(20px);
         }
         table {
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
-            width: 100%;
         }
         table td, table th {
             border: 1px solid #ddd;
@@ -1281,7 +1283,7 @@ def api():
 </head>
 
 <body>
-
+<center>
     <div id="login-box">
         <h1 id="title" style="color: #525252;">服务器状态查询</h1>
         <p>为了防止被人恶意使用 每个ip每分钟查询数量为3次</p>
@@ -1322,6 +1324,7 @@ def api():
         <button onclick="register()" class="login-button mdui-btn mdui-btn-raised mdui-ripple" id="login-btn">查询</button>
         <p id="copyright">&copy;Copyright 2023 蓝天云&trade;</p><br>
     </div>
+    </center>
     <script>
     function register() {
     var username = document.getElementById("ip").value;
