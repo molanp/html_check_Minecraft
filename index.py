@@ -1117,7 +1117,7 @@ import requests
 
 print('输入网站端口')
 jip = str(input('为空默认为2000\n输入：'))
-print('输入本网站的域名(不带端口)')
+print('输入本网站的域名(不带端口，无域名请输入本机外网ip)')
 pp = str(input('输入：'))
 if jip == '':
   jip = 2000
