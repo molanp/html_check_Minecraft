@@ -13,10 +13,7 @@ jip = str(input('输入网站端口，为空默认为2000 ：'))
 pp = str(input('输入本网站的域名(不带端口，无域名请输入本机外网ip): '))
 if jip == '':
   jip = 2000
-while lim !="": 
-  lim = str(input("是否对查询接口进行速率限制？(y/n):"))
-if lim == "y":
-  limi = str(input("输入每分钟允许的最大请求次数："))
+limi = str(input("输入每分钟允许的最大请求次数："))
 https = str(input("是否启用https(SSL)？(y/N)"))
 if https == "y": 
   cer = str(input("输入SSL证书路径(.crt):\n"))
@@ -31,8 +28,7 @@ CORS(app, resources=r'/*')
 limiter = Limiter(get_remote_address,app=app)
 
 @app.get('/check')
-if lim == "y":
-  @limiter.limit(f"{limi}/minute")
+@limiter.limit(f"{limi}/minute")
 def check():
   try:
     ip = request.args.get("ip")
