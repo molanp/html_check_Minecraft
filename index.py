@@ -92,7 +92,7 @@ def api():
     <style>
         body {
             font-family: 'Noto Sans SC', sans-serif;
-            background: url('http://stats.lantianclouds.com:48058/image/index.webp')
+            background: url('https://wallpaperm.cmcm.com/083cdc7e3e8b2b5a5cf1831c776a2efe.jpg')
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
