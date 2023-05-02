@@ -1,10 +1,10 @@
-from.until import MineStat
-from flask import Flask, jsonify, request, SSL_MODE, HTTPS_ENABLED
+from until import *
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from urllib.parse import urlencode
-import requests, ssl
+import requests
 
 app = Flask(__name__)
 
@@ -16,12 +16,8 @@ if jip == '':
 limi = str(input("输入每分钟允许的最大请求次数："))
 https = str(input("是否启用https(SSL)？(y/N)"))
 if https == "y": 
-  cer = str(input("输入SSL证书路径(.crt):\n"))
+  cer = str(input("输入SSL证书路径(.pem):\n"))
   cer_key = str(input("输入cer证书文件密钥路径(.key): \n"))
-  app.config['SSL_MODE'] = SSL_MODE  
-  app.config['HTTPS_ENABLED'] = HTTPS_ENABLED  
-  ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
-  ssl_context.load_cert_chain(cer, cer_key)
 app.config['JSON_AS_ASCII']=False
 CORS(app, resources=r'/*')
 
@@ -314,5 +310,7 @@ def api():
 '''
 
 print("Power by 782552619")
-app.run(host='0.0.0.0',port=jip,debug=False,threaded=True)
-
+if https == "y":
+	app.run(host='0.0.0.0',port=jip,debug=False,threaded=True,ssl_context=(cer, cer_key))
+else:
+	app.run(host='0.0.0.0',port=jip,debug=False,threaded=True)
