@@ -13,3 +13,7 @@ python index.py
 # tips
 
 之前为蓝天云写的（）
+
+# thanks
+
+[minestat](https://github.com/FragLand/minestat)
